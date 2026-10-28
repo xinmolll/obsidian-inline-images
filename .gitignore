@@ -1,0 +1,12 @@
+node_modules/
+dist/
+release-assets/
+.DS_Store
+.env
+.env.*
+*.log
+.obsidian/
+installation-backups/
+tests/.plugin-test.cjs
+tests/*.png
+tests/*diagnostics.json

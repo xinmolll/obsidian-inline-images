@@ -1,0 +1,90 @@
+.inline-images-preview {
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: middle;
+  line-height: 1.5;
+}
+.inline-images-preview img, .inline-images-rendered {
+  display: block;
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 4px;
+}
+.inline-images-frame {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  padding-top: 36px;
+  contain: layout paint;
+  isolation: isolate;
+}
+.inline-images-user-sized { max-height: none !important; height: auto; }
+.inline-images-resize {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  cursor: nwse-resize;
+  touch-action: none;
+  z-index: 3;
+  color: white;
+  background: rgb(0 0 0 / 65%);
+  border: 1px solid rgb(255 255 255 / 70%);
+  border-radius: 4px 0 4px 0;
+}
+.inline-images-resize::before { content: '↘'; font-size: 20px; }
+.inline-images-frame.is-resizing { user-select: none; }
+.inline-images-delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  cursor: pointer;
+  font-size: var(--font-ui-smaller);
+  background: var(--background-primary);
+  color: var(--text-normal);
+  box-shadow: 0 1px 5px rgb(0 0 0 / 20%);
+}
+.inline-images-zoomable { cursor: grab; touch-action: manipulation; }
+.inline-images-zoomable:active { cursor: grabbing; }
+.inline-images-zoomable:focus-visible { outline: 2px solid var(--interactive-accent); }
+.inline-images-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(0 0 0 / 90%);
+}
+.inline-images-lightbox-image {
+  display: block;
+  max-width: calc(100vw - 48px);
+  max-height: calc(100vh - 120px);
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.inline-images-lightbox-close {
+  position: absolute;
+  top: max(16px, env(safe-area-inset-top));
+  right: max(16px, env(safe-area-inset-right));
+  min-height: 44px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+.inline-images-lightbox-caption {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: max(16px, env(safe-area-inset-bottom));
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #eee;
+  text-align: center;
+  pointer-events: none;
+}

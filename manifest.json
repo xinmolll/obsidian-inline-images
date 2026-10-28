@@ -1,0 +1,9 @@
+{
+  "id": "inline-images",
+  "name": "图片存进笔记",
+  "version": "1.6.0",
+  "minAppVersion": "1.5.0",
+  "description": "粘贴、拖入或选择图片，在本机高画质压缩后直接存入 Markdown，不创建图片附件。",
+  "author": "Ran",
+  "isDesktopOnly": false
+}
